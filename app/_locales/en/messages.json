@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "Slash Search",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Focus on search field by pressing '/' on any pages",
+    "description": "The description of the application"
+  }
+}
