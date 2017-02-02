@@ -1,6 +1,6 @@
 {
   "name": "__MSG_appName__",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "manifest_version": 2,
   "description": "__MSG_appDescription__",
   "icons": {
@@ -22,7 +22,7 @@
   ],
   "options_ui": {
     "page": "options.html",
-    "chrome_style": true
+    "chrome_style": false
   },
   "content_scripts": [
     {
@@ -31,6 +31,8 @@
         "https://*/*"
       ],
       "js": [
+        "bower_components/jquery/dist/jquery.min.js",
+        "scripts/default-config.js",
         "scripts/contentscript.js"
       ],
       "run_at": "document_end",
@@ -42,7 +44,6 @@
       "19": "images/icon-19.png",
       "38": "images/icon-38.png"
     },
-    "default_title": "Slash Search",
-    "default_popup": "popup.html"
+    "default_title": "Slash Search"
   }
 }

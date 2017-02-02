@@ -1,24 +1,63 @@
 <!doctype html>
 <html>
-  <head>
-    <!-- build:css styles/options-vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css styles/main.css -->
-    <link href="styles/main.css" rel="stylesheet">
-    <!-- endbuild -->
-  </head>
-  <body>
-    <h1>'Allo, 'Allo!</h1>
+    <head>
+        <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
-    <!-- build:js scripts/options-vendor.js -->
-    <!-- bower:js -->
-    <!-- endbower -->
-    <!-- endbuild -->
+        <!-- build:css styles/options-vendor.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css styles/main.css -->
+        <link href="styles/main.css" rel="stylesheet">
+        <!-- endbuild -->
+        <style media="screen">
+            body {
+                min-width: 800px;
+            }
+            table tbody tr td:last-child {
+                width: 1px;
+            }
+            #row-template, #alert {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>URL <span class="small text-muted">(RegExp)</span></th>
+                    <th>Element <span class="small text-muted">(CSS Selector)</span></th>
+                    <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="row-template">
+                    <td><input class="url form-control" placeholder="www\.google\.co\.jp/search\?.*tbm=isch"></td>
+                    <td><input class="elem form-control" placeholder="input[name=q]"></td>
+                    <td><a class="delete-row btn btn-danger"><i class="fa fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <td colspan="3"><a id="add-row" class="btn btn-default btn-block"><i class="fa fa-plus"></i> Add</a></td>
+                </tr>
+            </tbody>
+        </table>
 
-    <!-- build:js scripts/options.js -->
-    <script src="scripts/options.js"></script>
-    <!-- endbuild -->
-  </body>
+        <div id="alert" class="alert alert-success">Options saved.</div>
+        <a id="save" class="btn btn-primary"><i class="fa fa-check"></i> Save</a>
+
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <!-- build:js scripts/options-vendor.js -->
+        <!-- bower:js -->
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- build:js scripts/options.js -->
+        <script src="scripts/options.js"></script>
+        <!-- endbuild -->
+        <script src="scripts/default-config.js"></script>
+    </body>
 </html>

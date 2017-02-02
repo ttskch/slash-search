@@ -7,6 +7,17 @@ import {stream as wiredep} from 'wiredep';
 
 const $ = gulpLoadPlugins();
 
+gulp.task('bower', () => {
+    return gulp.src([
+        'app/bower_components/jquery/dist/**',
+        'app/bower_components/bootstrap/dist/**',
+        'app/bower_components/font-awesome/css/**',
+        'app/bower_components/font-awesome/fonts/**'
+    ], {
+        base: 'app'
+    }).pipe(gulp.dest('dist'));
+});
+
 gulp.task('extras', () => {
   return gulp.src([
     'app/*.*',
@@ -126,7 +137,7 @@ gulp.task('package', function () {
 gulp.task('build', (cb) => {
   runSequence(
     'lint', 'babel', 'chromeManifest',
-    ['html', 'images', 'extras'],
+    ['html', 'images', 'extras', 'bower'],
     'size', cb);
 });
 
